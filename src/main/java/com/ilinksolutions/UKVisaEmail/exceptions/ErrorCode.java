@@ -1,4 +1,4 @@
-package com.ilinksolutions.p3m1.exceptions;
+package com.ilinksolutions.UKVisaEmail.exceptions;
 
 public enum ErrorCode
 {

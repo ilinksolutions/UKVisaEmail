@@ -1,4 +1,4 @@
-package com.ilinksolutions.p3m1.exceptions;
+package com.ilinksolutions.UKVisaEmail.exceptions;
 
 import java.util.List;
 import java.util.ArrayList;

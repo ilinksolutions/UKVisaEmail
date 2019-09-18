@@ -1,4 +1,4 @@
-package com.ilinksolutions.p3m1;
+package com.ilinksolutions.UKVisaEmail;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -7,7 +7,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class P2ApplicationTests {
+public class UKVisaEmailApplicationTests {
 
 	@Test
 	public void contextLoads() {

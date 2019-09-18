@@ -1,14 +1,14 @@
-package com.ilinksolutions.p3m1;
+package com.ilinksolutions.UKVisaEmail;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class P3M1Application
+public class UKVisaEmailApplication
 {
 	public static void main(String[] args)
 	{
-		SpringApplication.run(P3M1Application.class, args);
+		SpringApplication.run(UKVisaEmailApplication.class, args);
 	}
 
 }

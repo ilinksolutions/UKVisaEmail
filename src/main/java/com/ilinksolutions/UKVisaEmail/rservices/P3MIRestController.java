@@ -1,4 +1,4 @@
-package com.ilinksolutions.p3m1.rservices;
+package com.ilinksolutions.UKVisaEmail.rservices;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -11,12 +11,6 @@ import java.net.URL;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
-import com.ilinksolutions.p3m1.domains.UKVisaMessage;
-import com.ilinksolutions.p3m1.utils.AES256Manager;
-import com.ilinksolutions.p3m1.utils.EmailManager;
-import com.ilinksolutions.p3m1.bservices.UKVisaService;
-
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,6 +25,11 @@ import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
+import com.ilinksolutions.UKVisaEmail.bservices.UKVisaService;
+import com.ilinksolutions.UKVisaEmail.domains.UKVisaMessage;
+import com.ilinksolutions.UKVisaEmail.utils.AES256Manager;
+import com.ilinksolutions.UKVisaEmail.utils.EmailManager;
 
 @RestController
 public class P3MIRestController {
