@@ -31,7 +31,11 @@ import com.ilinksolutions.UKVisaEmail.domains.UKVisaMessage;
 import com.ilinksolutions.UKVisaEmail.utils.AES256Manager;
 import com.ilinksolutions.UKVisaEmail.utils.EmailManager;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+
 @RestController
+@Api(value="UK Visa Email Rest Test API", description="UK Visa Email Rest Test API", tags= {"UK Visa Email APIs"})
 public class P3MIRestController {
 	Logger logger = LoggerFactory.getLogger(P3MIRestController.class);
 
@@ -54,7 +58,7 @@ public class P3MIRestController {
 		}
 	}
 
-	@GetMapping("/getmsg/{id}")
+/*	@GetMapping("/getmsg/{id}")
 	public ResponseEntity<UKVisaMessage> readEntry(@PathVariable String id) {
 		logger.info("P3MIRestController: readEntry: Begin!");
 		logger.info("P3MIRestController: readEntry: Path Variable: " + id);
@@ -97,7 +101,8 @@ public class P3MIRestController {
 			return ResponseEntity.ok(returnValue);
 		}
 	}
-
+*/
+	@ApiOperation(value="Sending Email to the client.")
 	@PostMapping("/sendEmail")
 	public ResponseEntity<Integer> sendEmail(@RequestBody UKVisaMessage message)
 	{
