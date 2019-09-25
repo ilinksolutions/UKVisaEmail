@@ -38,7 +38,7 @@ import io.swagger.annotations.ApiOperation;
 @Api(value="UK Visa Email Rest Test API", description="UK Visa Email Rest Test API", tags= {"UK Visa Email APIs"})
 public class P3MIRestController {
 	Logger logger = LoggerFactory.getLogger(P3MIRestController.class);
-
+	/*	
 	@RequestMapping(value = "/fileMessage", method = RequestMethod.POST, headers = { "content-type=multipart/mixed",
 			"content-type=multipart/form-data" })
 	public ResponseEntity<UKVisaMessage> fileMessage(@RequestHeader HttpHeaders headers, @PathVariable String userId,
@@ -58,7 +58,7 @@ public class P3MIRestController {
 		}
 	}
 
-/*	@GetMapping("/getmsg/{id}")
+@GetMapping("/getmsg/{id}")
 	public ResponseEntity<UKVisaMessage> readEntry(@PathVariable String id) {
 		logger.info("P3MIRestController: readEntry: Begin!");
 		logger.info("P3MIRestController: readEntry: Path Variable: " + id);

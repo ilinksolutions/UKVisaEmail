@@ -1,5 +1,6 @@
 package com.ilinksolutions.UKVisaEmail.config;
 
+
 import java.util.Collections;
 
 import org.springframework.context.annotation.Bean;
@@ -16,11 +17,12 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 @Configuration
 public class SwaggerConfig {
+
 	@Bean
     public Docket productApi() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.ilinksolutions.UKVisaEmail.rservices"))
+                .apis(RequestHandlerSelectors.basePackage("com.ilinksolutions.UKVisaDb.rservices"))
                 .paths(PathSelectors.any())
                 .build()
                 .apiInfo(metaInfo());
@@ -29,8 +31,8 @@ public class SwaggerConfig {
     private ApiInfo metaInfo() {
 
         ApiInfo apiInfo = new ApiInfo(
-                "UK Visa Email API",
-                "This service is used for testing the UK Visa Email Rest APIs",
+                "UK Visa API",
+                "This service is used for testing the UK Visa Rest APIs",
                 "1.0",
                 "Terms of Service",
                 new Contact("I-Link Solutions, Inc.", "http://ilinksolution.com/",
@@ -41,6 +43,5 @@ public class SwaggerConfig {
 
         return apiInfo;
     }
-	
 
 }
