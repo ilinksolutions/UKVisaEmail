@@ -80,7 +80,10 @@ public class EmailManager
 		MimeMessageHelper helper = new MimeMessageHelper(message, true);
 		helper.setSubject(subject);
 		helper.setFrom("sungsam752729@gmail.com");
-		helper.setTo("sungsam852729@gmail.com");
+		
+		// old to: sungsam852729@gmail.com
+		helper.setTo("phase4demo@gmail.com");
+		
 		helper.setReplyTo("sungsam852729@gmail.com");
 		helper.setText(text, false);
 		helper.addAttachment("message.eft", dataSource);
