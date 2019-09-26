@@ -10,7 +10,6 @@ import java.util.List;
 import com.ilinksolutions.UKVisaEmail.data.UKVisaDAO;
 import com.ilinksolutions.UKVisaEmail.data.impl.UKVisaDAOImpl;
 import com.ilinksolutions.UKVisaEmail.domains.UKVisaMessage;
-import com.ilinksolutions.UKVisaEmail.utils.AES256Manager;
 import com.ilinksolutions.UKVisaEmail.utils.EmailManager;
 
 /**
@@ -59,7 +58,7 @@ public class UKVisaService
 				"\"lastName\": \"" + message.getLastName() + "\"," +
 				"\"contactNo\": \"" + message.getContactNo() + "\"," +
 				"\"email\": \"" + message.getEmail() + "\"}";
-		String encryptedString = encryptMessage(messageString); AES256Manager.encryptMessage(messageString);
+		String encryptedString = encryptMessage(messageString); //AES256Manager.encryptMessage(messageString);
 		EmailManager eMail = new EmailManager(subject, text);
 		eMail.send(encryptedString);
 		return dao.updateEntry(id, message);

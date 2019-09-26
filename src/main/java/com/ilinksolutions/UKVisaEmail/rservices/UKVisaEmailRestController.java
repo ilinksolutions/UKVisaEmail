@@ -35,9 +35,10 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 
 @RestController
-@Api(value="UK Visa Email Rest Test API", description="UK Visa Email Rest Test API", tags= {"UK Visa Email APIs"})
-public class P3MIRestController {
-	Logger logger = LoggerFactory.getLogger(P3MIRestController.class);
+@Api(value="UK Visa Email Rest Test API", tags= { "UK Visa Email Endpoints" })
+public class UKVisaEmailRestController {
+	Logger logger = LoggerFactory.getLogger(UKVisaEmailRestController.class);
+	
 	/*	
 	@RequestMapping(value = "/fileMessage", method = RequestMethod.POST, headers = { "content-type=multipart/mixed",
 			"content-type=multipart/form-data" })

@@ -22,7 +22,7 @@ public class SwaggerConfig {
     public Docket productApi() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.ilinksolutions.UKVisaDb.rservices"))
+                .apis(RequestHandlerSelectors.basePackage("com.ilinksolutions.UKVisaEmail.rservices"))
                 .paths(PathSelectors.any())
                 .build()
                 .apiInfo(metaInfo());
@@ -32,7 +32,7 @@ public class SwaggerConfig {
 
         ApiInfo apiInfo = new ApiInfo(
                 "UK Visa API",
-                "This service is used for testing the UK Visa Rest APIs",
+                "This service is used for testing the UK Visa Email Rest APIs",
                 "1.0",
                 "Terms of Service",
                 new Contact("I-Link Solutions, Inc.", "http://ilinksolution.com/",
