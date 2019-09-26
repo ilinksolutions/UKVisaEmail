@@ -31,7 +31,7 @@ public class SwaggerConfig {
     private ApiInfo metaInfo() {
 
         ApiInfo apiInfo = new ApiInfo(
-                "UK Visa API",
+                "UK Visa Email API",
                 "This service is used for testing the UK Visa Email Rest APIs",
                 "1.0",
                 "Terms of Service",

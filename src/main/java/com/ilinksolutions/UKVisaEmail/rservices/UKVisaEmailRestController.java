@@ -45,46 +45,46 @@ public class UKVisaEmailRestController {
 	public ResponseEntity<UKVisaMessage> fileMessage(@RequestHeader HttpHeaders headers, @PathVariable String userId,
 			@RequestPart(value = "image", required = false) MultipartFile image,
 			@RequestPart(value = "", required = true) UKVisaMessage json) {
-		logger.info("P3MIRestController: fileMessage: Begin!");
-		logger.info("P3MIRestController: fileMessage: JSON: " + json.toString());
-		logger.info("P3MIRestController: fileMessage: End!");
+		logger.info("UKVisaEmailRestController: fileMessage: Begin!");
+		logger.info("UKVisaEmailRestController: fileMessage: JSON: " + json.toString());
+		logger.info("UKVisaEmailRestController: fileMessage: End!");
 		UKVisaService service = new UKVisaService();
 		UKVisaMessage returnValue = service.getEntry(new Integer(1).intValue());
 		if (returnValue == null) {
-			logger.info("P3MIRestController: fileMessage: returnValue: NULL");
+			logger.info("UKVisaEmailRestController: fileMessage: returnValue: NULL");
 			return ResponseEntity.notFound().build();
 		} else {
-			logger.info("P3MIRestController: fileMessage: returnValue: " + returnValue.toString());
+			logger.info("UKVisaEmailRestController: fileMessage: returnValue: " + returnValue.toString());
 			return ResponseEntity.ok(returnValue);
 		}
 	}
 
 @GetMapping("/getmsg/{id}")
 	public ResponseEntity<UKVisaMessage> readEntry(@PathVariable String id) {
-		logger.info("P3MIRestController: readEntry: Begin!");
-		logger.info("P3MIRestController: readEntry: Path Variable: " + id);
+		logger.info("UKVisaEmailRestController: readEntry: Begin!");
+		logger.info("UKVisaEmailRestController: readEntry: Path Variable: " + id);
 		UKVisaService service = new UKVisaService();
 		UKVisaMessage returnValue = service.getEntry(new Integer(id).intValue());
 		if (returnValue == null) {
-			logger.info("P3MIRestController: readEntry: returnValue: NULL");
+			logger.info("UKVisaEmailRestController: readEntry: returnValue: NULL");
 			return ResponseEntity.notFound().build();
 		} else {
-			logger.info("P3MIRestController: readEntry: returnValue: " + returnValue.toString());
+			logger.info("UKVisaEmailRestController: readEntry: returnValue: " + returnValue.toString());
 			return ResponseEntity.ok(returnValue);
 		}
 	}
 
 	@PostMapping("/savemsg")
 	public ResponseEntity<UKVisaMessage> registerMessage(@RequestBody UKVisaMessage message) {
-		logger.info("P3MIRestController: registerMessage: Begin.");
-		logger.info("P3MIRestController: registerMessage: Transform: " + message.toString());
+		logger.info("UKVisaEmailRestController: registerMessage: Begin.");
+		logger.info("UKVisaEmailRestController: registerMessage: Transform: " + message.toString());
 		UKVisaService service = new UKVisaService();
 		UKVisaMessage returnValue = service.addEntry(message);
 		if (returnValue == null) {
-			logger.info("P3MIRestController: registerMessage: id: NULL.");
+			logger.info("UKVisaEmailRestController: registerMessage: id: NULL.");
 			return ResponseEntity.notFound().build();
 		} else {
-			logger.info("P3MIRestController: registerMessage: id: End.");
+			logger.info("UKVisaEmailRestController: registerMessage: id: End.");
 			URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(returnValue.getId())
 					.toUri();
 			return ResponseEntity.created(uri).body(returnValue);
@@ -93,7 +93,7 @@ public class UKVisaEmailRestController {
 
 	@PutMapping("/updatemsg/{id}")
 	public ResponseEntity<UKVisaMessage> update(@RequestBody UKVisaMessage message, @PathVariable int id) {
-		logger.info("P3MIRestController: update: Begin.");
+		logger.info("UKVisaEmailRestController: update: Begin.");
 		UKVisaService service = new UKVisaService();
 		UKVisaMessage returnValue = service.updateEntry(id, message);
 		if (returnValue == null) {
@@ -107,8 +107,8 @@ public class UKVisaEmailRestController {
 	@PostMapping("/sendEmail")
 	public ResponseEntity<Integer> sendEmail(@RequestBody UKVisaMessage message)
 	{
-		logger.info("P3MIRestController: getService: Begin!");
-		logger.info("P3MIRestController: getService: Path Variable: " + message.toString());
+		logger.info("UKVisaEmailRestController: getService: Begin!");
+		logger.info("UKVisaEmailRestController: getService: Path Variable: " + message.toString());
 		Integer returnValue = new Integer(0);
 		String text = "Dear " + message.getFirstName() + " " + message.getLastName()
 				+ ", \n\n Your application has been submitted based on your a request filed on your behalf.";
